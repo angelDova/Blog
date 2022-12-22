@@ -1,7 +1,14 @@
-import React from "react";
+"use client";
 
-function PreviewBlogList() {
-  return <div>PreviewBlogList</div>;
+import { usePreview } from "../lib/sanity.preview";
+import BlogList from "./BlogList";
+
+type Props = {
+  query: string;
+};
+
+export default function PreviewBlogList({ query }: Props) {
+  const posts = usePreview(null, query);
+  console.log("LOADING posts...");
+  return <BlogList posts={posts} />;
 }
-
-export default PreviewBlogList;
