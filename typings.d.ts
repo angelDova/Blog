@@ -11,7 +11,7 @@ interface Post extends Base {
   body: Block[];
   categories: Category[];
   mainImage: Image;
-  slug: Slug[];
+  slug: Slug;
   title: string;
   description: string;
 }
@@ -28,7 +28,7 @@ interface Image {
   asset: Reference;
 }
 
-interface Referance {
+interface Reference {
   _ref: string;
   _type: "reference";
 }
@@ -41,7 +41,7 @@ interface Slug {
 interface Block {
   _key: string;
   _type: "block";
-  childre: Span[];
+  children: Span[];
   markDefs: any[];
   style: "normal" | "h1" | "h3" | "blockquote";
 }
